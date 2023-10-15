@@ -1,0 +1,6 @@
+SELECT ( COUNT(*) AS ?cnt )
+WHERE {
+	?x <&0>+ ?y .
+	?z <&1> ?x .
+	?y <&2> ?z .
+}
