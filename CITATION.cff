@@ -1,0 +1,24 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: Optimizing Navigational Queries Online Appendix
+message: >-
+  If you use this dataset, please cite it using the metadata
+  from this file.
+type: dataset
+authors:
+  - given-names: Anon
+    family-names: Ymous
+    email: ymous5380@gmail.com
+repository-code: 'https://github.com/ymous5380/ongq'
+abstract: >-
+  Data used in the "Optimizing Navigational Graph Queries"
+  paper, including query specifications in SPARQL and SQL formats
+  and descriptions of the DBPedia and STRING datasets used.
+keywords:
+  - planning
+  - graph
+  - query
+  - dbpedia
+  - string-db
