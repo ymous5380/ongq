@@ -1,4 +1,4 @@
-# Run the file by calling "python generate.py" inside the directory where this file
+# Run the file by calling "python generate.py" inside the directory where this file is
 # and the "dbpedia_instances.csv", "string_instances.csv", "generated", "sql" and "sparql"
 # files and directories are located.
 import os
@@ -12,16 +12,20 @@ def generate_queries(templates, instances, language='sql', data_set_name='dbpedi
 			current_template_name = template_name
 			i = 0
 		i = i + 1
-		query_file_path = os.path.join(
-			'generated', data_set_name, language, template_name, f'query_{i}.sql')
+		query_dir_path = os.path.join('generated', data_set_name, language, template_name)
+		query_file_path = os.path.join(query_dir_path, f'query_{i}.sql')
 		template_content = templates[template_name]
 		
 		query_content = template_content
 		for j in range(len(instance) - 1):
 			query_content = query_content.replace(f'&{j}', instance[1 + j])
+
+		# Create directory if not exists
+		os.makedirs(query_dir_path, exist_ok=True)
+
+		# Write the query file
 		with open(query_file_path, 'w') as file:
 			file.write(query_content)
-	
 
 if __name__ == '__main__':
 	
